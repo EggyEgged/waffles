@@ -101,7 +101,7 @@ struct ContentView: View {
                         mgr.vfsinit()
                         mgr.sbxescape()
                     })
-                    .disabled(!mgr.dsready || mgr.vfsrunning || mgr.sbxrunning || (mgr.vfsready && mgr.sbxready))
+                    .disabled(!mgr.hasOffsets || !mgr.dsready || mgr.vfsrunning || mgr.sbxrunning || (mgr.vfsready && mgr.sbxready))
                 }
             }
             

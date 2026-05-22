@@ -244,6 +244,13 @@ final class IconThemeManager: ObservableObject {
         }
     }
 
+    func unzip_logmsg(_ message: String) {
+        DispatchQueue.main.async {
+            self.mgr.log += "(zip) " + message + "\n"
+            globallogger.log("(zip) " + message)
+        }
+    }
+
     func theme(named name: String) -> LaraIconTheme? {
         themes.first(where: { $0.name == name })
     }
@@ -714,18 +721,18 @@ final class IconThemeManager: ObservableObject {
         )
 
         let archive = try ZipArchive(data: try Data(contentsOf: source))
-        icon_logmsg("zip entries: \(archive.entries.count)")
+        unzip_logmsg("zip entries: \(archive.entries.count)")
 
         for entry in archive.entries {
-            icon_logmsg("entry: \(entry.path)")
+            unzip_logmsg("entry: \(entry.path)")
 
             let normalizedPath = entry.path.replacingOccurrences(of: "\\", with: "/")
             let outputURL = destination.appendingPathComponent(normalizedPath)
 
-            icon_logmsg("output: \(outputURL.path)")
+            unzip_logmsg("output: \(outputURL.path)")
 
             guard !normalizedPath.contains("..") else {
-                icon_logmsg("skip path traversal: \(normalizedPath)")
+                unzip_logmsg("skip path traversal: \(normalizedPath)")
                 continue
             }
 
@@ -733,7 +740,7 @@ final class IconThemeManager: ObservableObject {
                 do {
                     try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
                 } catch {
-                    icon_logmsg("mkdir fail: \(error.localizedDescription)")
+                    unzip_logmsg("mkdir fail: \(error.localizedDescription)")
                 }
 
             } else {
@@ -741,17 +748,17 @@ final class IconThemeManager: ObservableObject {
                 do {
                     try FileManager.default.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true)
                     let extracted = try archive.extract(entry)
-                    icon_logmsg("extracted size: \(extracted.count)")
+                    unzip_logmsg("extracted size: \(extracted.count)")
                     
                     try extracted.write(to: outputURL)
-                    icon_logmsg("wrote to file")
-                } catch { icon_logmsg("extract fail: \(entry.path) to \(error.localizedDescription)") }
+                    unzip_logmsg("wrote to file")
+                } catch { unzip_logmsg("extract fail: \(entry.path) to \(error.localizedDescription)") }
             }
         }
 
-        icon_logmsg("contents:")
+        unzip_logmsg("contents:")
 
-        if let e = FileManager.default.enumerator(at: destination, includingPropertiesForKeys: nil) { for case let fileURL as URL in e { icon_logmsg(fileURL.path) } }
+        if let e = FileManager.default.enumerator(at: destination, includingPropertiesForKeys: nil) { for case let fileURL as URL in e { unzip_logmsg(fileURL.path) } }
     }
     
     private func findNextZipHeader(

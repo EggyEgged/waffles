@@ -34,9 +34,6 @@
   <a href="#credits">credits</a>
 </p>
 
->[!NOTE]
->Lara is still in a super rough state and is undergoing a rewrite. If you are experiencing any issues, it is best to simply wait instead of opening issues or asking for support in the Discord. If you would like to contribute, it is best to wait after the rewrite. We will not be accepting PRs during this time or resolving/responding to any issues. Thank you for your understanding!
-
 ## Support
 | iOS Version | Support Status |
 | - | - |

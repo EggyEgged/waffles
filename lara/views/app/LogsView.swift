@@ -13,7 +13,7 @@ struct LogsView: View {
     private let nobullshitkey = "loggernobullshit"
     let logsURL: URL = {
         let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        return docs.appendingPathComponent("lara.log")
+        return docs.appendingPathComponent("Waffles.log")
     }()
 
     var body: some View {

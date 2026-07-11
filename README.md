@@ -2,7 +2,7 @@
   <br>
   <a href="https://discord.gg/gw8PcRF3Jr"><img src="https://github.com/rooootdev/lara/blob/main/lara.png?raw=true" alt="JESSI Logo" width="200"></a>
   <br>
-  <h1>LARA</h1>
+  <h1>Waffles</h1>
 
   <p>A customization toolbox that utilizes DarkSword. iOS 17.0 - iOS 18.7.1 & iOS 26.0.x, excluding M5 and A19.</p>
   <p>iOS 16.7.2 has been tested on A12 (iPhone XS Max). Other iOS 16.x versions may also work, but have not been tested yet.</p>
@@ -45,12 +45,12 @@
 | iOS 26.0 - iOS 26.0.1 | Supported |
 | iOS 26.1+ | Not Supported |
 
-¹ While *technically* affected by the exploit lara abuses, offsets havent been found for these versions and lara therefore doesnt support them.
+¹ While *technically* affected by the exploit Waffles uses, offsets haven't been found for these versions and Waffles therefore doesn't support them.
 
 Important Notes:
 - This tool does **not** work on M5 or A19 (Pro) devices regardless of iOS version because of MIE.
-- YMMV on M-series CPUs. If you are on an M-series device, try going to lara settings, selecting `Modify Offsets`, and setting `t1sz_boot` to `0x11`.
-- Issues involving lara not working on either unsupported or *technically* supported versions will be closed immediately.
+- YMMV on M-series CPUs. If you are on an M-series device, try going to Waffles settings, selecting `Modify Offsets`, and setting `t1sz_boot` to `0x11`.
+- Issues involving Waffles not working on either unsupported or *technically* supported versions will be closed immediately.
 
 ## Releases
 <p align="center">
@@ -98,7 +98,7 @@ Important Notes:
 
 ## Known Issues
 - wont work on M5, A19 and A19 Pro due to MTE
-- the kernel may panic when lara is closed from the app switcher.
+- the kernel may panic when Waffles is closed from the app switcher.
 - dirtyzero does not work.
 - apps don't detect JIT enabled however they are enabled.
 - remotecall is super bugged and may not work properly.
@@ -120,7 +120,7 @@ Important Notes:
 6. Get the kernelcache file.
 7. Transfer the kernelcache to your iPhone.
 8. In the Files app:
-   - Go to "On My iPhone" > "lara"
+   - Go to "On My iPhone" > "Waffles"
    - Place the kernelcache file there.
 9. Rename the file to `kernelcache` (without extension).
 

@@ -11,8 +11,11 @@ struct CreditsView: View {
     var body: some View {
         NavigationStack {
             List {
-                LinkCreditCell(name: "roooot", description: "Main Developer", url: "https://github.com/rooootdev") {
-                    LinkCreditIcon(url: "https://github.com/rooootdev.png")
+                LinkCreditCell(name: "Egg", description: "Main Developer of Waffles", url: "https://github.com/EggyEgged") {
+                    LinkCreditIcon(url: "https://avatars.githubusercontent.com/u/186115781?v=4")
+                }
+                LinkCreditCell(name: "roooot", description: "Main Developer of Lara", url: "https://github.com/rooootdev") {
+                    LinkCreditIcon(url: "https://github.com/wh1te4ever.png")
                 }
                 LinkCreditCell(name: "wh1te4ever", description: "Made darksword-kexploit-fun", url: "https://github.com/wh1te4ever") {
                     LinkCreditIcon(url: "https://github.com/wh1te4ever.png")
@@ -20,7 +23,7 @@ struct CreditsView: View {
                 LinkCreditCell(name: "Duy Tran", description: "Various remotecall-related improvements and features", url: "https://github.com/khanhduytran0") {
                     LinkCreditIcon(url: "https://github.com/khanhduytran0.png")
                 }
-                LinkCreditCell(name: "AppInstalleriOS", description: "Helped me with offsets and lots of other stuff", url: "https://github.com/AppInstalleriOSGH") {
+                LinkCreditCell(name: "AppInstalleriOS", description: "Helped roooot with offsets and lots of other stuff", url: "https://github.com/AppInstalleriOSGH") {
                     LinkCreditIcon(url: "https://github.com/AppInstalleriOSGH.png")
                 }
                 LinkCreditCell(name: "jailbreak.party", description: "dirtyZero Tweaks", url: "https://github.com/jailbreakdotparty") {
